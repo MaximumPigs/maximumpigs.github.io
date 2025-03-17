@@ -7,7 +7,7 @@ author:
   - MaximumPigs
 ---
 
-Do you want to start writing effective detection rules? Start here.
+Do you want to start writing detection rules? Start here.
 
 ![Image Title](/assets/images/ "ChatGPT prompt")  
 *Image caption*  
@@ -15,11 +15,11 @@ Do you want to start writing effective detection rules? Start here.
 
 I've heard it so many times that I've lost count. "I want to get into detection engineering, but I don't know where to start".
 
-With that statement, I can sympathise. I spoke the same words verbatim when I first began my journey in the field, and I was given the same advice which I have given on several occasions. 
+With that statement, I can sympathise. I spoke the same words verbatim when I first began my journey in the field, and I was given the same advice which I have now given on several occasions. 
 
 **"Just start"**
 
-I know, that's about as useful as a screen door on a submarine and I felt equally as terrible giving only those two words of advice as the person I first received them from likely felt. So why do we all seem to give the same useless advice? For me, I think I struggled to answer because being asked "where do I start?" in the context of detection engineering musters up the same overwhelming sense of futility I felt when I first asked the question myself. There is simply so much ground to cover, too much to point anyone in a single direction and be confident that they will reach their destination.
+I know, that's completely unhelpful and I felt equally as terrible giving only those two words of advice as the person I first received them from likely felt. So why do we all seem to give the same useless advice? For me, I think I struggled to answer because being asked "where do I start?" in the context of detection engineering musters up the same overwhelming sense of futility I felt when I first asked the question myself. There is simply so much ground to cover, too much to point anyone in a single direction and be confident that they will reach their destination.
 
 I've thought about this from time to time. What guidance can I give to those who are seeking a pathway into detection engineering? or if I rephrase that ... "I want to guide people into detection engineering, but I don't know where to start".
 
@@ -30,7 +30,8 @@ So here it is, my methodology for detection engineering.
 ## Intelligence
 
 Before we can start, we need intel. Intel is everywhere, every major cyber security vendor is posting intelligence - but generally not the intel we need for this exercise.  
-They type if intel often plastered all over the internet could be regarded as strategic intelligence, it tells a broad story about general threats to assist decision makers in directing their efforts.
+
+The type of intel often plastered all over the internet could be regarded as strategic intelligence, it tells a broad story about general threats to assist decision makers in directing their efforts.
 This type of intelligence doesn't do too much to help us detect malicious activity though. The kind of intel we need is Operational intelligence.
 
 Operational intelligence is highly technical in nature, and it provides highly specific details of a threat actors Tactics, Techniques and Procedures (TTPs) which makes it perfect
@@ -50,7 +51,7 @@ Enter [The DFIR Report](thedfirreport.com).
 
 ![The DFIR Report](/assets/images/detection-engineering/thedfirreport.jpg "The DFIR Report logo")  
 
-For those just beginning their journey, all the way to seasoned veterains, The DFIR Report is an incredibly valuable resource with highly technical details of (anonymised) real world compromise.
+For those just beginning their journey, all the way to seasoned veterains, The DFIR Report is an incredibly valuable resource with highly technical (anonymised details of real world compromise.
 
 The DFIR Report offer many services which you may wish to avail yourself of, but the most important for this discussion is their public release of a detailed compromise breakdown every few months - and trust me, each report will keep you busy until the next one.
 
@@ -58,7 +59,7 @@ If you are going to start anywhere, I suggest you start here.
 
 ## Tactics, Techniques and Procedures - The three most important questions.
 
-You can probably already see where I'm going with this post. In just one click, you've now got access to an extensive list of Indicators of Compromise (IoCs) and if you're even half savvy in querying your flavour of SIEM you've probably got enough here to create a handful of new detection rules.
+You can probably already see where I'm going with this post. In just one click, you've now got access to an extensive list of Indicators of Compromise (IoCs) and if you're even half savvy in querying your favourite flavour of SIEM you've probably got enough here to create a handful of new detection rules.
 
 Before you run off and create a bunch of rules to detect any of your hosts reaching out to any of the IP addresses listed in the report, I urge you to read on.
 
@@ -75,7 +76,7 @@ Once you've had a read and understood what has occured, ask yourself 3 simple qu
 
 ### **1) How can I describe this as simply as possible?**
 
-   By thinking about a step in the simplest terms possible is. The point of answering this question is to give you a place to start looking.
+   The point of answering this question is to give you a place to start looking.
 
    ![Scheduled Tasks](/assets/images/detection-engineering/scheduled_tasks.jpg "Process command line of scheduled task creation, using schtasks.")  
 
@@ -93,11 +94,11 @@ Once you've had a read and understood what has occured, ask yourself 3 simple qu
 
    If you're familiar with Windows logging, you'll have recognised the pictured event above as a Process Creation event. Either Windows Event Id 4688, or Sysmon Event Id 1. My best advice to you is not to start here. While process creation events are a wealth of information, they suffer from a lot of variation. The same activity performed in a slightly different way can present differently.
 
-   Instead, look for something similar - and this is supported by your answer to the first question. All we're looking for is evidence that a scheduled task has been created.
+   Instead, look for something rigid and unchanging - and this is supported by your answer to the first question. All we're looking for is evidence that a scheduled task has been created.
 
    A quick google search for "windows scheduled task creation event" yields plenty of results. Where possible, I recommend clicking on any links to [Ultimate Windows Security](www.ultimatewindowssecurity.com). I've found this page to be the authority on all things Windows Events.
 
-   In this instance, we are taken to [Event Id 4698](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventID=4698) which simply shows that a scheduled task has been created. The reason we care about this Event Id is the fact that it will log whenever a scheduled task has been created - it doesn't care if it was created using the command line or the graphical interface, it also doesn't care what parameters were set, or what command it will call. It will log in all instances.
+   In this instance, we are taken to [Event Id 4698](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventID=4698) which simply shows that a scheduled task has been created. The reason we care about this Event Id is the fact that it will log whenever a scheduled task has been created - it doesn't care if it was created using the command line or the graphical interface, it also doesn't care what parameters were set, or what command it will call. It will log in all instances, and you can be confident of that.
 
 ### **3) How does this differ from normal activity?**
 
@@ -127,15 +128,13 @@ Once you've had a read and understood what has occured, ask yourself 3 simple qu
 
    Remember to avoid using things like filenames, IP addresses, hashes etc. Under no circumstance should you be searching for "svcmc.dll" or "MainFunc".
 
-   Finally, if you were to look for 4698 events within your environment, with any of the above criteria (one at a time) - would your search return 0 results? What if you expanded your search to cover the last 6 months? (a few false positive)
-
-   If so, you might have found yourself one (or three) new detection rule(s) to create.
+   If you're able to isolate your results to only include the malicious activity, you might have found yourself one (or three) new detection rule(s) to create.
 
    - Scheduled task created executing CMD
    - Scheduled task created containing runddl32
    - Scheduled task created referencing user public directory
 
-   I think it's very important to note at this point that there will be many people asking "What if?" in response to these three rules - and while it's a valid question, it is also a victim of the perfect solution falacy. "Just because something is not perfect, does not mean it is not worth doing". No, these rules will not cover all possible variances of this activity - but they will certainly have detected it in this instance and they are broad enough that they have a good chance of detected similar activity.
+   I think it's very important to note at this point that there will be many people asking "What if?" in response to these three rules - and while it's a valid question, it is also a victim of the perfect solution falacy. "Just because something is not perfect, does not mean it is not worth doing". No, these rules will not cover all possible variances of this activity - but they will certainly have detected it in this instance and they are broad enough that they have a good chance of detecting similar activity.
 
 ## Rule creation
 
