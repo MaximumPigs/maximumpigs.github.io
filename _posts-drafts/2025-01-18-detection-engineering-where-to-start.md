@@ -32,12 +32,12 @@ So here it is, my methodology for detection engineering.
 Before we can start, we need intel. Intel is everywhere, every major cyber security vendor is posting intelligence - but generally not the intel we need for this exercise.  
 
 The type of intel often plastered all over the internet could be regarded as strategic intelligence, it tells a broad story about general threats to assist decision makers in directing their efforts.
-This type of intelligence doesn't do too much to help us detect malicious activity though. The kind of intel we need is Operational intelligence.
+This type of intelligence doesn't do too much to help us detect malicious activity though. The kind of intel we need is Tactical intelligence.
 
-Operational intelligence is highly technical in nature, and it provides highly specific details of a threat actors Tactics, Techniques and Procedures (TTPs) which makes it perfect
+Tactical intelligence is highly technical in nature, and it provides highly specific details of a threat actors Tactics, Techniques and Procedures (TTPs) which makes it perfect
 for identifying malicious activity within an environment.
 
-There are two common places we can obtain Operational intelligence.
+There are two common places we can obtain Tactical intelligence.
 
 1) By being on the receiving end of an attack in progress.
 1) By studying the events of a victim who has been attacked.
