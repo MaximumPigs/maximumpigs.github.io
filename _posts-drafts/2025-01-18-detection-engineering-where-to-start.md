@@ -57,7 +57,7 @@ The DFIR Report offer many services which you may wish to avail yourself of, but
 
 If you are going to start anywhere, I suggest you start here.
 
-## Tactics, Techniques and Procedures - The three most important questions.
+## TTPs and the three most important questions.
 
 You can probably already see where I'm going with this post. In just one click, you've now got access to an extensive list of Indicators of Compromise (IoCs) and if you're even half savvy in querying your favourite flavour of SIEM you've probably got enough here to create a handful of new detection rules.
 
