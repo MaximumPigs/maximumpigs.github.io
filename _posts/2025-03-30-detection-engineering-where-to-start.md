@@ -7,19 +7,13 @@ author:
   - MaximumPigs
 ---
 
-Do you want to start writing detection rules? Start here.
-
-![Image Title](/assets/images/ "ChatGPT prompt")  
-*Image caption*  
-<br />
-
 I've heard it so many times that I've lost count. "I want to get into detection engineering, but I don't know where to start".
 
-With that statement, I can sympathise. I spoke the same words verbatim when I first began my journey in the field, and I was given the same advice which I have now given on several occasions. 
+I can sympathise with you because I felt the same way when I first asked for advice, so overwhelmed and unsure of where to begin. Detection engineering feels like such a vast and complex field that it’s hard to know what direction to take.
 
-**"Just start"**
+The response I was always given, and the response I now give to anyone who asks is **"Just start"**.
 
-I know, that's completely unhelpful and I felt equally as terrible giving only those two words of advice as the person I first received them from likely felt. So why do we all seem to give the same useless advice? For me, I think I struggled to answer because being asked "where do I start?" in the context of detection engineering musters up the same overwhelming sense of futility I felt when I first asked the question myself. There is simply so much ground to cover, too much to point anyone in a single direction and be confident that they will reach their destination.
+I know, that's completely unhelpful and I feel just as terrible giving only those two words of advice as the person I first received them from likely felt. So why do we all seem to give the same useless advice? For me, I think I struggle to answer because being asked "where do I start?" in the context of detection engineering musters up the same overwhelming sense of futility I felt when I first asked the question myself. There is simply so much ground to cover, too much to point anyone in a single direction and be confident that they will reach their destination.
 
 I've thought about this from time to time. What guidance can I give to those who are seeking a pathway into detection engineering? or if I rephrase that ... "I want to guide people into detection engineering, but I don't know where to start".
 
