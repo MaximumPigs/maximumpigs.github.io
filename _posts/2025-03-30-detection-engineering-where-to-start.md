@@ -33,7 +33,8 @@ for identifying malicious activity within an environment.
 
 There are two common places we can obtain Tactical intelligence.
 
-1) By being on the receiving end of an attack in progress.
+1) By being on the receiving end of an attack in progress.  
+
 1) By studying the events of a victim who has been attacked.
 
 With option 1 being far too late to use for pre-emptive detection engineering, option 2 becomes our best source.
@@ -45,7 +46,7 @@ Enter [The DFIR Report](thedfirreport.com).
 
 ![The DFIR Report](/assets/images/detection-engineering/thedfirreport.jpg "The DFIR Report logo")  
 
-For those just beginning their journey, all the way to seasoned veterains, The DFIR Report is an incredibly valuable resource with highly technical (anonymised details of real world compromise.
+For those just beginning their journey, all the way to seasoned veterains, The DFIR Report is an incredibly valuable resource with highly technical, anonymised details of real world compromise.
 
 The DFIR Report offer many services which you may wish to avail yourself of, but the most important for this discussion is their public release of a detailed compromise breakdown every few months - and trust me, each report will keep you busy until the next one.
 
