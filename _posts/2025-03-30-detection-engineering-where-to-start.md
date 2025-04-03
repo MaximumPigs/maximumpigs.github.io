@@ -116,8 +116,8 @@ Once you've had a read and understood what has occured, ask yourself 3 simple qu
    ![Command and Arguments](/assets/images/detection-engineering/scheduled_task_command.jpg "Scheduled Task Command and Arguments from task XML")  
 
    - How many of them start by executing the command "cmd"?  
-   - How many of them contain rundll32 in the arguments?  
-   - How many of them call files from the "users\public" directory?
+   - How many of them leverage rundll32.exe?  
+   - How many of them call files from the "\users\public" directory?
 
    Probably not too many, if any at all. These things would be considered "abnormal" in most environments.
 
