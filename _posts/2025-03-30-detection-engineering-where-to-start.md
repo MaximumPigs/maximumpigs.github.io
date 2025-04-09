@@ -117,7 +117,7 @@ Once you've had a read and understood what has occured, ask yourself 3 simple qu
 
    - How many of them start by executing the command "cmd"?  
    - How many of them leverage rundll32.exe?  
-   - How many of them call files from the "\users\public" directory?
+   - How many of them call files from the "\users\public\\" directory?
 
    Probably not too many, if any at all. These things would be considered "abnormal" in most environments.
 
@@ -171,6 +171,6 @@ Here are some suggestions on how you can "stress test" your query:
 1) Case sensitivity.  
    *If you are looking for the string "rundll32" and you're returning results as expected, try changing your search to look for "runDLL32" and see if you're still getting the same expected results.*
 1) Combined logic problems.  
-   *If you've unavoidably used multiple logic operators in your query (AND, OR, NOT), make sure your parentheses are correctly placed. This is harder than it sounds. X NOT Y AND Z will return events which contain both X and Z but not Y, whereas X NOT (Y AND Z) will return events containing X, but do not contain BOTH Y and Z - however Y OR Z may be present. This comes down to understanding the query language you are using, take the time to understand it.*
+   *If you've unavoidably used multiple logic operators in your query (AND, OR, NOT), make sure your parentheses are correctly placed. This is harder than it sounds. X NOT Y AND Z will return events which contain both X and Z but not Y, whereas X NOT (Y AND Z) will return events containing X, but do not contain BOTH Y and Z - however either Y OR Z may be present. This comes down to understanding the query language you are using, take the time to understand it.*
 
 Once you are confident, you can now enable your detection rule. Congratulations!
